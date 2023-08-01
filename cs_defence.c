@@ -296,7 +296,7 @@ void add_tower(struct tile map[MAP_ROWS][MAP_COLUMNS], int* money){
         map[tr][tc].entity = BASIC_TOWER;
         printf("Tower successfully created!\n");
     }else{
-        printf("Error: Tower creation unsuccessful. Make sure you have at least $200 and that the tower is placed on a grass block with no entity.");
+        printf("Error: Tower creation unsuccessful. Make sure you have at least $200 and that the tower is placed on a grass block with no entity.\n");
     }
 }
 
