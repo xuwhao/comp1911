@@ -79,9 +79,9 @@ int main(void) {
     // set basic info
     int lives = -1, money = -1, start_x = -1, start_y = -1, end_x = -1, end_y = -1;
     read_basic_info(&lives, &money, &start_x, &start_y, &end_x, &end_y);
-    int is_basic_info_read = 1;
+    // int is_basic_info_read = 1;
     if (lives == -1 || money == -1 || start_x == -1 || start_y == -1 || end_x == -1 || end_y == -1){
-        is_basic_info_read = 0;
+        // is_basic_info_read = 0;
     }else{
         map[start_x][start_y].land = PATH_START;
         map[end_x][end_y].land = PATH_END;
