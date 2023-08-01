@@ -180,8 +180,8 @@ void read_lake(struct tile map[MAP_ROWS][MAP_COLUMNS], int start_x, int start_y,
 
     if (!valid_point(lake_row, lake_col) || !valid_point(lake_row + height - 1, lake_col + width - 1) 
     || (height == 0 && width == 0)
-    || (lake_row <= start_x && start_x <= lake_row + height && lake_col <= start_y && start_y < lake_col + width)
-    || (lake_row <= end_x && end_x <= lake_row + height && lake_col <= end_y && end_y < lake_col + width)){
+    || (lake_row <= start_x && start_x < lake_row + height && lake_col <= start_y && start_y < lake_col + width)
+    || (lake_row <= end_x && end_x < lake_row + height && lake_col <= end_y && end_y < lake_col + width)){
         printf("Error: Lake out of bounds, ignoring...\n");
         return;
     }
