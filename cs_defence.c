@@ -635,7 +635,7 @@ void rain(struct tile map[MAP_ROWS][MAP_COLUMNS])
     {
         for (int j = col_offset; j < MAP_COLUMNS; j += col_spacing)
         {
-            if (map[i][j].land == GRASS)
+            if (valid_point(i, j) && map[i][j].land == GRASS)
             {
                 map[i][j].land = WATER;
                 if (map[i][j].entity == BASIC_TOWER || map[i][j].entity == POWER_TOWER)
