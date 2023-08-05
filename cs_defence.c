@@ -66,7 +66,7 @@ int attack(struct tile map[MAP_ROWS][MAP_COLUMNS], int x, int y, enum entity ent
 void attack_enemies(struct tile map[MAP_ROWS][MAP_COLUMNS], int *money);
 void rain(struct tile map[MAP_ROWS][MAP_COLUMNS]);
 void flood(struct tile map[MAP_ROWS][MAP_COLUMNS]);
-void teleporters(struct tile map[MAP_ROWS][MAP_COLUMNS], int start_x, int start_y, int end_x, int end_y);
+void teleporters(struct tile map[MAP_ROWS][MAP_COLUMNS], int start_x, int start_y);
 // void next_teleporter(struct tile map[MAP_ROWS][MAP_COLUMNS], int x, int y, int *next_x, int *next_y);
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -516,6 +516,7 @@ void attack_enemies(struct tile map[MAP_ROWS][MAP_COLUMNS], int *money)
         }
     }
     printf("%d enemies destroyed!\n", cnt);
+    *money += cnt;
 }
 
 int attack(struct tile map[MAP_ROWS][MAP_COLUMNS], int x, int y, enum entity entity)
@@ -699,7 +700,7 @@ void flood(struct tile map[MAP_ROWS][MAP_COLUMNS])
 // {
 // }
 
-void teleporters(struct tile map[MAP_ROWS][MAP_COLUMNS], int start_x, int start_y, int end_x, int end_y)
+void teleporters(struct tile map[MAP_ROWS][MAP_COLUMNS], int start_x, int start_y)
 {
     int row1, col1, row2, col2;
     scanf(" %d %d %d %d", &row1, &col1, &row2, &col2);
