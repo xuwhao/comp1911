@@ -381,7 +381,7 @@ void move_enemies(struct tile map[MAP_ROWS][MAP_COLUMNS], int start_x, int start
     {
 
         struct tile prev;
-        int x = start_x, y = start_y, next_x, next_y;
+        int x = start_x, y = start_y, next_x = -1, next_y = -1;
 
         prev.entity = map[x][y].entity;
         prev.n_enemies = map[x][y].n_enemies;
@@ -655,7 +655,7 @@ void flood(struct tile map[MAP_ROWS][MAP_COLUMNS])
                     { // up
                         flag[i - 1][j] = 1;
                         map[i - 1][j].land = WATER;
-                        if (map[i - 1][j].entity == BASIC_TOWER || map[i - 1][j].land == POWER_TOWER)
+                        if (map[i - 1][j].entity == BASIC_TOWER || map[i - 1][j].entity == POWER_TOWER)
                         {
                             map[i - 1][j].entity = EMPTY;
                         }
@@ -665,7 +665,7 @@ void flood(struct tile map[MAP_ROWS][MAP_COLUMNS])
                     { // down
                         flag[i + 1][j] = 1;
                         map[i + 1][j].land = WATER;
-                        if (map[i + 1][j].entity == BASIC_TOWER || map[i + 1][j].land == POWER_TOWER)
+                        if (map[i + 1][j].entity == BASIC_TOWER || map[i + 1][j].entity == POWER_TOWER)
                         {
                             map[i + 1][j].entity = EMPTY;
                         }
@@ -675,7 +675,7 @@ void flood(struct tile map[MAP_ROWS][MAP_COLUMNS])
                     { // left
                         flag[i][j - 1] = 1;
                         map[i][j - 1].land = WATER;
-                        if (map[i][j - 1].entity == BASIC_TOWER || map[i][j - 1].land == POWER_TOWER)
+                        if (map[i][j - 1].entity == BASIC_TOWER || map[i][j - 1].entity == POWER_TOWER)
                         {
                             map[i][j - 1].entity = EMPTY;
                         }
@@ -685,7 +685,7 @@ void flood(struct tile map[MAP_ROWS][MAP_COLUMNS])
                     { // right
                         flag[i][j + 1] = 1;
                         map[i][j + 1].land = WATER;
-                        if (map[i][j + 1].entity == BASIC_TOWER || map[i][j + 1].land == POWER_TOWER)
+                        if (map[i][j + 1].entity == BASIC_TOWER || map[i][j + 1].entity == POWER_TOWER)
                         {
                             map[i][j + 1].entity = EMPTY;
                         }
