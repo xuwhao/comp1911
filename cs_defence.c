@@ -162,7 +162,7 @@ int main(void)
             flood(map);
             break;
         case 'c':
-            teleporters(map, start_x, start_y, end_x, end_y);
+            teleporters(map, start_x, start_y);
             break;
         default:
             break;
