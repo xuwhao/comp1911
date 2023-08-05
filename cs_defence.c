@@ -616,6 +616,21 @@ void rain(struct tile map[MAP_ROWS][MAP_COLUMNS])
         col_offset -= col_spacing;
     }
 
+    while (1){
+        if (row_offset - row_spacing < 0){
+            break;
+        }
+        row_offset -= row_spacing;
+    }
+
+    while (1){
+        if (col_offset - col_spacing < 0){
+            break;
+        }
+        col_offset -= col_spacing;
+    }
+
+
     for (int i = row_offset; i < MAP_ROWS; i += row_spacing)
     {
         for (int j = col_offset; j < MAP_COLUMNS; j += col_spacing)
