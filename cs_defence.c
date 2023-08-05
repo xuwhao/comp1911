@@ -827,13 +827,13 @@ void teleporters(struct tile map[MAP_ROWS][MAP_COLUMNS], int start_x, int start_
         }
     }
 
-    map[row1][col1].land = TELEPORTER;
-    map[row1][col1].pair_x = row2;
-    map[row1][col1].pair_y = col2;
+    map[x1][y1].land = TELEPORTER;
+    map[x1][y1].pair_x = row2;
+    map[x1][y1].pair_y = col2;
 
-    map[row2][col2].land = TELEPORTER;
-    map[row2][col2].pair_x = -1;
-    map[row2][col2].pair_y = -1;
+    map[x2][y2].land = TELEPORTER;
+    map[x2][y2].pair_x = -1;
+    map[x2][y2].pair_y = -1;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
