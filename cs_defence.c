@@ -725,10 +725,17 @@ void teleporters(struct tile map[MAP_ROWS][MAP_COLUMNS], int start_x, int start_
     scanf(" %d %d %d %d", &row1, &col1, &row2, &col2);
 
     if (!valid_point(row1, col1) || !valid_point(row2, col2)){
+        printf("Error: Teleporters can only be created on path tiles.\n");
         return; 
     }
-    
+
     if (map[row1][col1].land < 3 || map[row1][col1].land > 7 || map[row2][col2].land < 3 || map[row2][col2].land > 7)
+    {
+        printf("Error: Teleporters can only be created on path tiles.\n");
+        return;
+    }
+
+     if (map[row1][col1].land == TELEPORTER || map[row2][col2].land == TELEPORTER)
     {
         printf("Error: Teleporters can only be created on path tiles.\n");
         return;
