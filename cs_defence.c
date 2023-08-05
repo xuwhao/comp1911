@@ -516,7 +516,7 @@ void attack_enemies(struct tile map[MAP_ROWS][MAP_COLUMNS], int *money)
         }
     }
     printf("%d enemies destroyed!\n", cnt);
-    *money += cnt;
+    *money += (cnt * 5);
 }
 
 int attack(struct tile map[MAP_ROWS][MAP_COLUMNS], int x, int y, enum entity entity)
@@ -578,6 +578,7 @@ int attack(struct tile map[MAP_ROWS][MAP_COLUMNS], int x, int y, enum entity ent
                 {
                     cnt += map[i][j].n_enemies;
                     map[i][j].n_enemies = 0;
+                    map[i][j].entity = EMPTY;
                 }
             }
         }
